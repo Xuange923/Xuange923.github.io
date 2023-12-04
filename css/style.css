@@ -1,0 +1,63 @@
+body { font-family: 'Open Sans', sans-serif; }
+.container { 
+    max-width: 1200px;
+    width: 90%; 
+    margin: 0 auto; 
+    padding: 15px;
+}
+h1, h2 { color: #333; }
+.authors { margin-top: 20px; }
+.affiliations { margin-bottom: 20px; }
+img { width: 100%; height: auto; }
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .icon-item img {
+        height: 30px; 
+    }
+}
+
+.icon-container {
+    text-align: center;
+}
+
+.icon-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-item {
+    margin: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-item img {
+    height: 40px; 
+    margin-bottom: 5px;
+}
+
+.icon-item h4 {
+    margin: 0;
+}
+
+
+.visualizations img {
+    width: 45%; 
+    margin: 10px 2.5%; 
+    float: left; 
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
