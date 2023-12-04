@@ -5,10 +5,15 @@ body { font-family: 'Open Sans', sans-serif; }
     margin: 0 auto; 
     padding: 15px;
 }
-h1, h2 { color: #333; }
-.authors { margin-top: 20px; }
+h1, h2 { color: #333; 
+text-align: center;}
+.authors { margin-top: 20px; text-align: center;}
 .affiliations { margin-bottom: 20px; }
-img { width: 100%; height: auto; }
+img { width: 100%; height: auto; display: block; margin: 0 auto;}
+p {
+    font-size: 18px; 
+    line-height: 1.6; 
+}
 
 /* 响应式设计 */
 @media (max-width: 768px) {
