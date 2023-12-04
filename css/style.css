@@ -16,7 +16,7 @@ p {
     line-height: 1.6; 
 }
 
-/* 响应式设计 */
+
 @media (max-width: 768px) {
     .container {
         width: 100%;
@@ -24,13 +24,29 @@ p {
 
     .icon-item img {
         height: 30px; 
+		transition: filter 0.3s;
     }
+
 }
 
 .icon-container {
     text-align: center;
 }
 
+.icon-item a {
+	    color: #13227a; 
+	    text-decoration: none; 
+	    transition: color 0.3s; 
+}
+
+	.icon-item a:hover {
+	    color: mediumpurple; 
+}
+	
+	.icon-item a:hover img {
+	    filter: brightness(0) saturate(100%) invert(39%) sepia(90%) saturate(3516%) hue-rotate(239deg) brightness(98%) contrast(104%); /
+}
+	
 .icon-list {
     list-style: none;
     padding: 0;
