@@ -1,0 +1,436 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<meta charset="UTF-8">
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+  .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+.icon {
+    text-align: center;
+    color: #0000ff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.icon img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.icon:hover {
+    color: #705380;
+    transform: scale(1.1);
+}
+.icon:hover img {
+    transform: scale(1.2);
+}
+
+.image-container {
+            text-align: center;
+        }
+.image-container img {
+    width: 60%;
+    max-width: 600px;
+}
+.image-caption {
+    text-align: center;
+    font-size: 18px;
+    color: #404040;
+  width: 90%;
+            margin: 5px auto;
+            padding: 10px;
+}
+
+.abstract-container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+.abstract-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #000000;
+}
+.abstract-content {
+    font-size: 18px;
+    color: #292828;
+    text-align: justify;
+}
+
+
+.container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            /*background-color: #f9f9f9;*/
+            /*border: 1px solid #ddd;*/
+            border-radius: 8px;
+            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+}
+.content {
+    font-size: 18px;
+    color: #2b2a2a;
+    text-align: justify;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    color: #000000;
+}
+.main_img {
+    display: block;
+    margin: 20px auto;
+    max-width: 85%;
+    height: auto;
+    /*border: 1px solid #ddd;*/
+    /*border-radius: 8px;*/
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+}
+.highlight {
+            font-weight: bold;
+            color: #FF0000;
+        }
+
+.citation-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    position: relative;
+}
+.citation-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+.citation-content {
+    font-size: 16px;
+    color: #555;
+}
+.copy-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.copy-button:hover {
+    background-color: #0056b3;
+}
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJFX2BFB9X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WJFX2BFB9X');
+
+ function copyCitation() {
+            const citationText = document.querySelector('.citation-content code').textContent;
+            navigator.clipboard.writeText(citationText).catch(err => {
+                console.error('Failed to copy citation: ', err);
+            });
+        }
+</script>
+	<title>HiMix</title>
+	<meta property="og:image" content="./resources/fig-modelMain.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="HiMix: Reducing Computational Complexity in Large Vision-Language Models" />
+	<meta property="og:description" content="Xuange Zhang, Dengjie Li, Bo Liu, Zenghao Bao, Yao Zhou, Baisong Yang, Zhongying Liu, Yujie Zhong, Zheng Zhao, Tongtong Yuan" />
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:34px">HiMix: Reducing Computational Complexity in Large Vision-Language Models</span>
+		<br>
+		<br>
+
+    <table align="center" width="1000px">
+  <tr>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Xuange Zhang<sup>1†</sup>
+      </span>
+    </td>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Dengjie Li<sup>2†</sup>
+      </span>
+    </td>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Bo Liu<sup>1</sup>
+      </span>
+    </td>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Zenghao Bao<sup>2</sup>
+      </span>
+    </td>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Yao Zhou<sup>2</sup>
+      </span>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Baisong Yang<sup>2</sup>
+      </span>
+    </td>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Zhongying Liu<sup>2</sup>
+      </span>
+    </td>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Yujie Zhong<sup>2</sup>
+      </span>
+    </td>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Zheng Zhao<sup>2*</sup>
+      </span>
+    </td>
+    <td align="center" width="200px">
+      <span style="font-size:22px; white-space:nowrap;">
+        Tongtong Yuan<sup>1*</sup>
+      </span>
+    </td>
+  </tr>
+</table>
+<br>
+<table align="center" width="1000px">
+  <tr>
+    <td align="center">
+      <span style="font-size:22px;">
+        <sup>1</sup>Beijing University of Technology, CN &emsp; <sup>2</sup>Meituan Inc., CN
+      </span>
+    </td>
+  </tr>
+</table>
+
+
+			<br>
+
+    <div class="icon-container">
+        <a href="" class="icon" target="_blank">  <!-- Update the href attribute to the desired URL -->
+            <img src="./resources/paper.png" alt="Paper Icon">
+            <div>Paper</div>
+        </a>
+        <a href="https://github.com/Xuange923/HiMix" class="icon" target="_blank">  <!-- Update the href attribute to the desired URL -->
+            <img src="./resources/github.png" alt="Code Icon">
+            <div>Code</div>
+        </a>
+    </div>
+
+	</center>
+	<br>
+	<div class="image-container">
+        <img src="./resources/fig-first.png" alt="clean-usnob">
+        <div class="image-caption">
+            Comparison of performance and computational cost of the language decoder between the original and HiMix models. The circles, arranged from smallest to largest, represent the models Qwen2-0.5B, Llama3-1B, TinyLlama-1.1B, and Llama3-3B. While maintaining a similar performance to the original models, our HiMix achieves a <strong><em>10×</em></strong> reduction in computational cost.
+        </div>
+    </div>
+
+	<hr>
+<!--  <div class="abstract-container">-->
+<!--        <div class="abstract-title">Abstract</div>-->
+<!--        <div class="abstract-content">-->
+<!--            Benefiting from recent advancements in large language models and modality alignment techniques, existing  Large Vision-Language Models~(LVLMs) have achieved prominent performance across a wide range of scenarios. However,-->
+<!--the excessive computational complexity limits the widespread use of these models in practical applications. We argue that one main bottleneck in computational complexity is caused by the involvement of redundant vision sequences in model computation. This is inspired by a reassessment of the efficiency of vision and language information transmission in the language decoder of LVLMs. Then, we propose a novel hierarchical vision-language interaction mechanism called Hierarchical Vision injection for Mixture Attention (HiMix). In HiMix, only the language sequence undergoes full forward propagation, while the vision sequence interacts with the language at specific stages within each language decoder layer. It is striking that our approach significantly reduces computational complexity with minimal performance loss. Specifically, HiMix achieves a 10× reduction in the computational cost of the language decoder across multiple LVLM models while maintaining comparable performance. This highlights the advantages of our method, and we hope our research brings new perspectives to the field of vision-language understanding.-->
+<!--        </div>-->
+<!--    </div>-->
+
+  <div class="title">Abstract</div>
+    <div class="container">
+        <div class="content">
+            Benefiting from recent advancements in large language models and modality alignment techniques, existing  Large Vision-Language Models~(LVLMs) have achieved prominent performance across a wide range of scenarios. However, the excessive computational complexity limits the widespread use of these models in practical applications. We argue that one main bottleneck in computational complexity is caused by the involvement of redundant vision sequences in model computation. This is inspired by a reassessment of the efficiency of vision and language information transmission in the language decoder of LVLMs. Then, we propose a novel hierarchical vision-language interaction mechanism called Hierarchical Vision injection for Mixture Attention (HiMix). In HiMix, only the language sequence undergoes full forward propagation, while the vision sequence interacts with the language at specific stages within each language decoder layer. It is striking that our approach significantly reduces computational complexity with minimal performance loss. Specifically, HiMix achieves a 10× reduction in the computational cost of the language decoder across multiple LVLM models while maintaining comparable performance. This highlights the advantages of our method, and we hope our research brings new perspectives to the field of vision-language understanding.
+        </div>
+    </div>
+<hr>
+    <div class="title">Framework</div>
+    <img class="main_img" src="./resources/fig-modelMain.png" alt="Model Structure">
+    <div class="container">
+        <div class="content">
+          <strong>Comparison of Vanilla Model and HiMix Architectures.</strong> <strong><em>Left:</em></strong> Overall structure of traditional Vanilla.  <strong><em>Middle:</em></strong> Overall structure of HiMix.  <strong><em>Right:</em></strong> Details of Mixture Attention. Hierarchical Vision Injection for Mixture Attention (HiMix) is a method designed to reduce computational overhead while maintaining LVLM performance. After fusing the vision and language features through Mixture Attention, the vision sequence no longer participates in the forward propagation process within the language decoder, thereby substantially decreasing the overall computational load.
+        </div>
+    </div>
+
+  <hr>
+  <div class="title">Results</div>
+    <img class="main_img" src="./resources/result_base.png" alt="Performance and Computational Efficiency Comparison">
+    <div class="container">
+        <div class="content">
+            Comprehensive Comparison of Performance and Computational Efficiency Between the Original Model and HiMix. The models are trained using the LLAVA 1.5 dataset, with SigLIP serving as the vision encoder. Performance metrics include VQAv2, GQA, TextVQA, MM-Vet, POPE, MME, and MMMU. Computational efficiency is assessed by Language Decoder parameter count (B) and GFLOPs. Performance improvements are highlighted in <strong>bold</strong>, with computational cost shown in <strong class="highlight">red</strong> as a percentage of the original model.
+        </div>
+    </div>
+
+   <div class="title">Visualisation</div>
+    <img class="main_img" src="./resources/visual-supp-1.png" alt="Visualisation results 1">
+  <img class="main_img" src="./resources/visual-supp-2.png" alt="Visualisation results 2">
+    </div>
+	<br>
+  <hr>
+
+   <div class="title">Citation</div>
+  <div class="content">If you find our work useful in your research or applications, please cite our paper: </div>
+    <div class="citation-container">
+        <div class="citation-content">
+            <code>@article{2025}
+}</code>
+        </div>
+        <button class="copy-button" onclick="copyCitation()">Copy</button>
+    </div>
+
+
+
+
+
+<br>
+</body>
+</html>
