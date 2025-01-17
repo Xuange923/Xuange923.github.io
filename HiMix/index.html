@@ -17,37 +17,7 @@
 		font-weight:300;
 	}
 
-	.disclaimerbox {
-		background-color: #eee;
-		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-		padding: 20px;
-	}
 
-	video.header-vid {
-		height: 140px;
-		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-	}
-
-	img.header-img {
-		height: 140px;
-		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-	}
-
-	img.rounded {
-		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-	}
 
 	a:link,a:visited
 	{
@@ -58,56 +28,7 @@
 		color: #208799;
 	}
 
-	td.dl-link {
-		height: 160px;
-		text-align: center;
-		font-size: 22px;
-	}
 
-	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-		15px 15px 0 0px #fff, /* The fourth layer */
-		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-		20px 20px 0 0px #fff, /* The fifth layer */
-		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-		25px 25px 0 0px #fff, /* The fifth layer */
-		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
-		margin-left: 10px;
-		margin-right: 45px;
-	}
-
-	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
-
-		margin-left: 10px;
-		margin-right: 45px;
-	}
-
-
-	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
-		margin-top: 5px;
-		margin-left: 10px;
-		margin-right: 30px;
-		margin-bottom: 5px;
-	}
-
-	.vert-cent {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-	}
 
   .icon-container {
             display: flex;
@@ -150,29 +71,6 @@
             padding: 10px;
 }
 
-.abstract-container {
-            width: 90%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-.abstract-title {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 15px;
-    color: #000000;
-}
-.abstract-content {
-    font-size: 18px;
-    color: #292828;
-    text-align: justify;
-}
 
 
 .container {
@@ -223,12 +121,7 @@
     line-height: 1.6;
     position: relative;
 }
-.citation-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-}
+
 .citation-content {
     font-size: 16px;
     color: #555;
@@ -371,7 +264,7 @@
 	</center>
 	<br>
 	<div class="image-container">
-        <img src="./resources/fig-first.png" alt="clean-usnob">
+        <img src="./resources/fig-flops.png" alt="clean-usnob">
         <div class="image-caption">
             Comparison of performance and computational cost of the language decoder between the original and HiMix models. The circles, arranged from smallest to largest, represent the models Qwen2-0.5B, Llama3-1B, TinyLlama-1.1B, and Llama3-3B. While maintaining a similar performance to the original models, our HiMix achieves a <strong><em>10×</em></strong> reduction in computational cost.
         </div>
@@ -403,10 +296,10 @@
 
   <hr>
   <div class="title">Results</div>
-    <img class="main_img" src="./resources/result_base.png" alt="Performance and Computational Efficiency Comparison">
+    <img class="main_img" src="./resources/result.png" alt="Performance and Computational Efficiency Comparison">
     <div class="container">
         <div class="content">
-            Comprehensive Comparison of Performance and Computational Efficiency Between the Original Model and HiMix. The models are trained using the LLAVA 1.5 dataset, with SigLIP serving as the vision encoder. Performance metrics include VQAv2, GQA, TextVQA, MM-Vet, POPE, MME, and MMMU. Computational efficiency is assessed by Language Decoder parameter count (B) and GFLOPs. Performance improvements are highlighted in <strong>bold</strong>, with computational cost shown in <strong class="highlight">red</strong> as a percentage of the original model.
+            Comprehensive Comparison of Performance and Computational Efficiency Between the Original Model and HiMix. The models are trained using the LLAVA 1.5 dataset, with SigLIP serving as the vision encoder. Performance metrics include VQAv2, GQA, TextVQA, MM-Vet, POPE, MME, and MMMU. Computational efficiency is assessed by Language Decoder parameter count (B) and GFLOPs. Performance improvements are highlighted in <strong>bold</strong>, with computational cost shown in <strong class="highlight">red</strong> as a percentage of the original model. * represents training with the llava-ov dataset
         </div>
     </div>
 
@@ -429,7 +322,7 @@
 
 
 
-
+<!--前面的图加7b，表格+7b的结果-->
 
 <br>
 </body>
